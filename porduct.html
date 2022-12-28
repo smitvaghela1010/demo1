@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let arr = [];
+        function showdata()
+        {
+            console.log("hjhjhi");
+            let p_id = document.getElementById("pid").value;
+            console.log(p_id);
+            let p_name = document.getElementById("pname").value;
+            console.log(p_name);
+            let p_price = document.getElementById("pprice").value;
+            console.log(p_price);
+            let p_qun = document.getElementById("pqun").value;
+            console.log(p_qun);
+
+            let data = {
+                id:p_id,
+                name:p_name,
+                price:p_price,
+                quantitay:p_qun
+            }
+
+            arr.push(data);
+            console.log(arr);
+            
+        }
+        function delet(){
+            let y = document.getElementById("did").value
+
+            arr.map((a,i) => {
+                if(a.id == y){
+                    arr.splice(i,1)
+                }
+            })
+            console.log(arr);
+        }
+        function up(){
+            console.log('sssss');
+        }
+    </script>
+</head>
+<body>
+
+    <form action="" method="post" onsubmit="showdata(); event.preventDefault()">
+        Product_id: <input id="pid" type="text" name="id" placeholder="Enter P_id:">
+        <br><br>
+        product_name: <input id="pname" type="text" name="name" placeholder="Enter p_name:">
+        <br><br>
+        product_price: <input id="pprice" type="text" name="price" placeholder="Enter P_price">
+        <br><br>
+        product_quantitay: <input id="pqun" type="text" name="quan" placeholder="Enter p_quantitay:">
+        <br><br>
+        <input type="submit">
+    </form>
+<br><br>
+    <form action="" method="post" onsubmit="delet();event.preventDefault()">
+        Delet:<input type="text" id="did" placeholder="Enter product id:">
+        <br>
+        <input type="submit">
+    </form>
+
+    <form action="" method="post" onsubmit="up();event.preventDefault()" >
+        Update:<input type="text" id="update" placeholder="Enter product id:">
+        <br>
+        <input type="submit">
+    </form>
+    
+</body>
+</html>
